@@ -13,8 +13,8 @@
 - variants in scope: default, dark, light (exactly the three on the page)
 
 ## Status
-Builds and validates locally (3 variants); Windows loader 51/51, .ani timing 6/6. Not yet a GitHub repo.
-Needs toolkit **v0.2.0** (first tag with `[render] strip_filtered`) before CI can build it correctly.
+Public at https://github.com/hervad/material-cursors-w11-hidpi (2026-10-08), built by CI with toolkit **v0.2.0**
+(first tag with `[render] strip_filtered`). CI files match the local build image-for-image (bytes differ: encoder).
 
 ## Findings
 - **Canvas:** every main SVG is `width="32" height="32"` with no viewBox -> `design_canvas = 32`. Each cursor also
@@ -51,6 +51,7 @@ Needs toolkit **v0.2.0** (first tag with `[render] strip_filtered`) before CI ca
 - [x] `w11cursor build` + `validate` green locally; Test-LoadCursors 51/51; Get-AniFrameTiming 6/6
 - [x] Upstream Windows set inspected with `w11cursor inspect` -> README
 - [x] README (Capitaine layout), CREDITS, preview image
-- [ ] Maintainer: arrow, diagonals and preview confirmed by eye
-- [ ] Installed on Windows 11 and checked on screen
-- [ ] Toolkit v0.2.0 tagged; GitHub repo created; tag v0.1.0
+- [x] Installed on Windows 11 25H2 (2026-10-08): 3 variants, loader 51/51 on C:\Windows\Cursors, live cursor = files;
+      maintainer's go-ahead for v0.1.0 after the sharpness/contrast review (option A)
+- [x] Toolkit v0.2.0 tagged; GitHub repo created (public); CI green
+- [x] tag v0.1.0 (2026-10-08)
