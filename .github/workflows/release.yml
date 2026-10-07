@@ -1,0 +1,18 @@
+# Builds on every push/PR (artifact), publishes a GitHub Release on tags v*.
+name: release
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    # Needs a toolkit tag with `[render] strip_filtered` (added after v0.1.0). An older toolkit IGNORES the key
+    # and would build the cursors with upstream's shadow baked in - bump both refs to the first tag that has it.
+    uses: hervad/w11-cursor-toolkit/.github/workflows/build-theme.yml@v0.2.0
+    with:
+      toolkit-ref: v0.2.0
+    permissions:
+      contents: write

@@ -1,0 +1,127 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# theme.toml - the ONLY build input of a theme repo. Read by `w11cursor`.
+# Fill every TODO, then:  w11cursor build theme.toml && w11cursor validate theme.toml
+# ─────────────────────────────────────────────────────────────────────────────
+schema = 1
+
+[theme]
+slug        = "material"               # used in zip names: <slug>-<variant>-w11-hidpi-v<version>.zip
+name        = "Material Cursors"
+version     = "0.1.0"                   # YOUR port version (tag v0.1.0 to release)
+license     = "GPL-2.0-only"               # artwork license = upstream license (GPL-3.0-only, GPL-2.0-only, ...)
+porter      = "Vadym Herman (hervad)"
+description = "Material Design cursors - default, dark, light"
+
+[upstream]                              # provenance - copied into README/CREDITS, also documents the pin
+kind    = "git"                         # git | tarball
+url     = "https://github.com/varlesh/material-cursors"
+ref     = "2a5f302fefe04678c421473bed636b4d87774b4a"             # pin a COMMIT, never a branch
+path    = "upstream"                    # git submodule (or unpacked tarball) location
+authors = ["Alexey Varfolomeev (varlesh)"]
+license = "GPL-2.0 (repo LICENSE = GPL v2 text, no 'only'/'or later' notice anywhere; nixpkgs mislabels it gpl3Only)"
+page    = "https://www.gnome-look.org/p/1346778"
+
+[render]
+renderer       = "cairosvg"
+design_canvas  = 32        # every main SVG is width="32" height="32" (no viewBox); the *_24.svg twins are not used
+hotspot_mode   = "point"
+strip_filtered = true      # upstream bakes its drop shadow in as blurred black copies (1,158 elements, all
+                           # opacity 0.3, nothing else uses a filter); Windows draws its own shadow (ADR-14)
+
+[sizes]                    # toolkit default size lists; only the download cap is raised:
+ani_budget_bytes = 1_100_000   # working.ani is ~1.02 MB (24 frames x 9 sizes, vs Polar's 18). The cap is a download-size
+                               # policy, not a loader limit (toolkit SIZE_POLICY.md); the per-frame offset limit passes.
+                               # Maintainer's decision 2026-10-08: raise it for Material only, keep every size exact.
+
+# Only the variants on the gnome-look page: material / material-dark / material-light (verified 2026-10-08).
+[[variants]]
+id          = "default"
+scheme_name = "Material W11 HiDPI"
+svg_dir     = "upstream/src/material_cursors"
+
+[[variants]]
+id          = "dark"
+scheme_name = "Material Dark W11 HiDPI"
+svg_dir     = "upstream/src/material_dark_cursors"
+
+[[variants]]
+id          = "light"
+scheme_name = "Material Light W11 HiDPI"
+svg_dir     = "upstream/src/material_light_cursors"
+
+# Hotspots in 32-px design units. Tips = upstream src/config/*.cursor (32 px line; upstream's own 64 px values are
+# exactly 2x, i.e. this "point" rule). Symmetric cursors = (16, 16), the measured centre of the art (upstream's
+# Xcursor pixel 15 touches the centre at 32 px but drifts 8 px off it by 256 px). Text = measured centre.
+# Animation: upstream 30 ms/frame = 1.8 jiffies -> whole jiffies spread: 43 jiffies = 716.7 ms per turn (orig 720).
+
+[cursors.arrow]        # default
+svg = "default.svg"
+hotspot = [1, 1]
+
+[cursors.help]         # help
+svg = "help.svg"
+hotspot = [1, 1]
+
+[cursors.working]      # progress-01..24
+frames = "progress-{n:02d}.svg"
+frame_count = 24
+frame_start = 1
+delay = [2, 2, 1, 2, 2, 2, 2, 1, 2, 2, 2, 2, 1, 2, 2, 2, 2, 1, 2, 2, 2, 2, 1, 2]
+hotspot = [1, 1]
+
+[cursors.busy]         # wait-01..24
+frames = "wait-{n:02d}.svg"
+frame_count = 24
+frame_start = 1
+delay = [2, 2, 1, 2, 2, 2, 2, 1, 2, 2, 2, 2, 1, 2, 2, 2, 2, 1, 2, 2, 2, 2, 1, 2]
+hotspot = [16, 16]
+
+[cursors.precision]
+svg = "crosshair.svg"
+hotspot = [16, 16]
+
+[cursors.text]
+svg = "text.svg"
+hotspot = [15.5, 15.5]
+
+[cursors.handwriting]
+svg = "pencil.svg"
+hotspot = [2, 29]
+
+[cursors.unavailable]
+svg = "not-allowed.svg"
+hotspot = [16, 16]
+
+[cursors.vert]
+svg = "size_ver.svg"
+hotspot = [16, 16]
+
+[cursors.horz]
+svg = "size_hor.svg"
+hotspot = [16, 16]
+
+[cursors.dgn1]         # NW-SE (size_fdiag) - check visually
+svg = "size_fdiag.svg"
+hotspot = [16, 16]
+
+[cursors.dgn2]         # NE-SW (size_bdiag) - check visually
+svg = "size_bdiag.svg"
+hotspot = [16, 16]
+
+[cursors.move]
+svg = "fleur.svg"
+hotspot = [16, 16]
+
+[cursors.alternate]
+svg = "up-arrow.svg"
+hotspot = [15, 2]
+
+[cursors.link]
+svg = "pointer.svg"
+hotspot = [13, 5]
+
+[cursors.pin]          # no Material artwork: reuse the hand, like Polar
+same_as = "link"
+
+[cursors.person]
+same_as = "link"

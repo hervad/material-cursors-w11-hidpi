@@ -1,0 +1,4 @@
+# Files are LF; keep them LF on Windows checkouts too (core.autocrlf=true would convert to CRLF).
+* text=auto eol=lf
+# Licence texts must stay byte-identical to their sources: never convert them.
+LICENSE -text
