@@ -29,11 +29,14 @@ If Windows ever shows a different scheme after you change the pointer size, pick
 | | Default | Dark | Light |
 | --- | --- | --- | --- |
 | **Look** | Blue-grey | Dark grey | White |
+| **Best on** | light backgrounds | light backgrounds | dark backgrounds |
 | **Zip** | `material-default-w11-hidpi-v….zip` | `material-dark-w11-hidpi-v….zip` | `material-light-w11-hidpi-v….zip` |
 | **Scheme name** | Material W11 HiDPI | Material Dark W11 HiDPI | Material Light W11 HiDPI |
 
-These are the three variants on the original theme page. All of them have a dark outline, so each stays visible on
-any background. Install all three and switch whenever you like.
+These are the three variants on the original theme page, unchanged in colour. All three share the original's
+semi-transparent dark outline, which stands out on light and mid-grey backgrounds but fades on dark ones. If you
+work mostly in dark windows, pick **Light**; Default and Dark are for light backgrounds. Install all three and
+switch whenever you like.
 
 ## Why they stay sharp
 

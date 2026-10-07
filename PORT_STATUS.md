@@ -34,6 +34,11 @@ Needs toolkit **v0.2.0** (first tag with `[render] strip_filtered`) before CI ca
   (2026-10-08): `ani_budget_bytes = 1_100_000` for Material only.
 - **Upstream `windows/` folder** (inspected read-only, nothing copied): 15 files, each one 32 px BMP image;
   animations at 3 jiffies (50 ms) per frame = 1.2 s per turn; no Pin/Person.
+- **Sharpness** (2026-10-08): no layer is resampled; anti-aliasing is one pixel deep at every size (partial pixels
+  not on the outer edge: 0-3.4 %, Microsoft aero 0-5 %). The 24-art is NOT crisper at 48/72 px (rim 32.9 vs 29.4 %).
+  Perceived softness of Default/Dark on dark windows is contrast, not blur: the outline is black at 75 % opacity
+  (WCAG vs #202020: outline 1.2:1, body Dark 2.0:1 / Default 3.0:1 / Light 12.8:1). Maintainer's decision: keep the
+  upstream look (option A); README says which variant suits which background.
 - **Load cost** (Windows 11 25H2, same run as Microsoft aero): static 0.4-0.6 ms (aero 0.3-0.8), animated 5-11 ms at
   32-96 px (aero 3-13), 87 ms at 256 px (aero 59); 0 GDI/USER handles leaked over 300 loads per file.
 
