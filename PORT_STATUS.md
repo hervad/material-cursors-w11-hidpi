@@ -58,3 +58,5 @@ Public at https://github.com/hervad/material-cursors-w11-hidpi (2026-10-08), bui
       maintainer's go-ahead for v0.1.0 after the sharpness/contrast review (option A)
 - [x] Toolkit v0.2.0 tagged; GitHub repo created (public); CI green
 - [x] tag v0.1.0 (2026-10-08)
+- [x] v0.1.1 released (2026-10-08): scheme rename; release zips match SHA256SUMS, INF scheme names correct, loader
+      17/17 per variant
