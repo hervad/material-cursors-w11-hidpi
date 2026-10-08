@@ -124,7 +124,7 @@ Remove-Item "C:\Windows\Cursors\Material Blue Grey W11 HiDPI" -Recurse
 ## Build from source
 
 The cursors are built with [w11-cursor-toolkit](https://github.com/hervad/w11-cursor-toolkit) from the original
-repository, pinned as a git submodule in [`upstream/`](upstream/). Rendering needs the native cairo library; see the
+repository, pinned as a git submodule in `upstream/` ([that exact commit](https://github.com/varlesh/material-cursors/tree/2a5f302fefe04678c421473bed636b4d87774b4a)). Rendering needs the native cairo library; see the
 toolkit's README for how to get it on Windows or Linux.
 
 ```powershell
