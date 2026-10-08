@@ -42,6 +42,9 @@ Public at https://github.com/hervad/material-cursors-w11-hidpi (2026-10-08), bui
 - **Load cost** (Windows 11 25H2, same run as Microsoft aero): static 0.4-0.6 ms (aero 0.3-0.8), animated 5-11 ms at
   32-96 px (aero 3-13), 87 ms at 256 px (aero 59); 0 GDI/USER handles leaked over 300 loads per file.
 
+- **v0.1.1 rename** (maintainer, 2026-10-08): scheme "Material W11 HiDPI" -> "Material Blue Grey W11 HiDPI" so every variant is named in
+  Mouse Properties; variant id default -> blue-grey (zip material-blue-grey-*). Same cursors (README previews regenerate byte-identical). README: upgrade note.
+
 ## Checklist
 - [x] Upstream pinned (submodule at a commit); latest commit confirmed
 - [x] License verified by reading the actual LICENSE file -> ./LICENSE (byte-identical)

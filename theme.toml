@@ -7,7 +7,7 @@ schema = 1
 [theme]
 slug        = "material"               # used in zip names: <slug>-<variant>-w11-hidpi-v<version>.zip
 name        = "Material Cursors"
-version     = "0.1.0"                   # YOUR port version (tag v0.1.0 to release)
+version     = "0.1.1"                   # YOUR port version (tag v0.1.0 to release)
 license     = "GPL-2.0-only"               # artwork license = upstream license (GPL-3.0-only, GPL-2.0-only, ...)
 porter      = "Vadym Herman (hervad)"
 description = "Material Design cursors - default, dark, light"
@@ -35,8 +35,8 @@ ani_budget_bytes = 1_100_000   # working.ani is ~1.02 MB (24 frames x 9 sizes, v
 
 # Only the variants on the gnome-look page: material / material-dark / material-light (verified 2026-10-08).
 [[variants]]
-id          = "default"
-scheme_name = "Material W11 HiDPI"
+id          = "blue-grey"                       # v0.1.0: id "default"
+scheme_name = "Material Blue Grey W11 HiDPI"     # v0.1.0: "Material W11 HiDPI"; #526d78 ~ Material Design Blue Grey 600
 svg_dir     = "upstream/src/material_cursors"
 
 [[variants]]

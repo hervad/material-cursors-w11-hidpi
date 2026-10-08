@@ -9,7 +9,7 @@ for your display scale and pointer size.**
 [![Windows 11](https://img.shields.io/badge/Windows-11-0078D4?style=flat-square)](#install)
 [![License: GPL-2.0](https://img.shields.io/badge/license-GPL--2.0-blue?style=flat-square)](LICENSE)
 
-<img src="docs/preview.png" alt="All 15 Material cursors in the three variants: Default and Dark on a light background, Light on a dark background" width="100%">
+<img src="docs/preview.png" alt="All 15 Material cursors in the three variants: Blue Grey and Dark on a light background, Light on a dark background" width="100%">
 
 </div>
 
@@ -26,16 +26,16 @@ If Windows ever shows a different scheme after you change the pointer size, pick
 
 ## Pick a variant
 
-| | Default | Dark | Light |
+| | Blue Grey | Dark | Light |
 | --- | --- | --- | --- |
 | **Look** | Blue-grey | Dark grey | White |
 | **Best on** | light backgrounds | light backgrounds | dark backgrounds |
-| **Zip** | `material-default-w11-hidpi-v….zip` | `material-dark-w11-hidpi-v….zip` | `material-light-w11-hidpi-v….zip` |
-| **Scheme name** | Material W11 HiDPI | Material Dark W11 HiDPI | Material Light W11 HiDPI |
+| **Zip** | `material-blue-grey-w11-hidpi-v….zip` | `material-dark-w11-hidpi-v….zip` | `material-light-w11-hidpi-v….zip` |
+| **Scheme name** | Material Blue Grey W11 HiDPI | Material Dark W11 HiDPI | Material Light W11 HiDPI |
 
 These are the three variants on the original theme page, unchanged in colour. All three share the original's
 semi-transparent dark outline, which stands out on light and mid-grey backgrounds but fades on dark ones. If you
-work mostly in dark windows, pick **Light**; Default and Dark are for light backgrounds. Install all three and
+work mostly in dark windows, pick **Light**; Blue Grey and Dark are for light backgrounds. Install all three and
 switch whenever you like.
 
 ## Why they stay sharp
@@ -103,12 +103,22 @@ failure blocks the release.
 
 ## Uninstall
 
+Upgrading from v0.1.0? Its scheme was called **Material W11 HiDPI**; v0.1.1 installs it as **Material Blue Grey W11 HiDPI**. To remove the old
+one, pick another scheme in `main.cpl`, then run this in an administrator PowerShell:
+
+```powershell
+reg delete "HKCU\Control Panel\Cursors\Schemes" /v "Material W11 HiDPI" /f
+Remove-Item "C:\Windows\Cursors\Material W11 HiDPI" -Recurse
+```
+
+To uninstall a current scheme:
+
 1. Run `uninstall.cmd` from the extracted folder. It removes the scheme from the list and opens Mouse Properties.
 2. Pick another scheme and click **OK**.
 3. Delete the cursor files from an administrator PowerShell, for example:
 
 ```powershell
-Remove-Item "C:\Windows\Cursors\Material W11 HiDPI" -Recurse
+Remove-Item "C:\Windows\Cursors\Material Blue Grey W11 HiDPI" -Recurse
 ```
 
 ## Build from source
