@@ -125,3 +125,27 @@ same_as = "link"
 
 [cursors.person]
 same_as = "link"
+
+# ── Colour checks (toolkit v0.6.1 [[checks]], ADR-9 note). `validate` samples the BUILT layer at these design-unit
+#    points (solid areas in every variant, found on the built files) and fails the build if a measure is missed.
+# no body/outline check: Material's edge is a darker shade of the body by design (~1.6:1)
+[[checks]]
+name = "Unavailable sign on its disc"
+role = "unavailable"
+a = [12.25, 12.75]
+b = [15.75, 16.25]
+min_contrast = 3
+
+[[checks]]
+name = "resize dot differs from the arrows"
+role = "horz"
+a = [16.25, 16.25]
+b = [7.25, 16.25]
+min_delta_e = 15
+
+[[checks]]
+name = "Move dot differs from the arrows"
+role = "move"
+a = [16.25, 16.25]
+b = [16.25, 6.25]
+min_delta_e = 15

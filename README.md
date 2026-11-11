@@ -130,7 +130,7 @@ toolkit's README for how to get it on Windows or Linux.
 ```powershell
 git clone --recurse-submodules https://github.com/hervad/material-cursors-w11-hidpi
 cd material-cursors-w11-hidpi
-python -m pip install "w11cursor @ git+https://github.com/hervad/w11-cursor-toolkit@v0.2.0"
+python -m pip install "w11cursor @ git+https://github.com/hervad/w11-cursor-toolkit@v0.6.1"
 w11cursor build    theme.toml --out dist      # all three variants + zips
 w11cursor validate theme.toml --dist dist     # re-read every file: sizes, hotspots, frames, timing
 w11cursor preview  theme.toml --dist dist     # redraw docs/preview.png
